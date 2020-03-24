@@ -13,7 +13,7 @@ pipeline {
     stages {
         stage("Hostname -i") {
             steps {
-                sh '\'hostname \' -i'
+                sh '\'hostname\' -i'
             }
         }
         stage("Whoami") {
