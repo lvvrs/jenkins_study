@@ -2,7 +2,7 @@
 //Check Jenkins host
 properties([disableConcurrentBuilds()])
 
-pipline {
+pipeline {
     agent {
         label 'MASTER'
     }
