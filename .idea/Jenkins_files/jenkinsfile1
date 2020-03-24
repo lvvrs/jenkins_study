@@ -11,9 +11,14 @@ pipeline {
         timestamps()
     }
     stages {
-        stage("Hostname -i") {
+        stage(Sleep) {
             steps {
-                sh '\'hostname\' -i'
+                sh 'sleep 5'
+            }
+        }
+        stage("Hostname") {
+            steps {
+                sh 'hostname'
             }
         }
         stage("Whoami") {
