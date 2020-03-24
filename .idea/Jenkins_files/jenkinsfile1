@@ -31,9 +31,14 @@ pipeline {
                 sh 'uptime'
             }
         }
-        stage("Hostname 2") {
+        stage("ip-address") {
             steps {
-                sh 'hostname'
+                sh 'hostname -i'
+            }
+        }
+        stage("WorkDirectory") {
+            steps {
+                sh 'pwd'
             }
         }
     }
