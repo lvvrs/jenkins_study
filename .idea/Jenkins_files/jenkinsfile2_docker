@@ -15,7 +15,7 @@ pipeline {
             steps {
                 echo "=========start building docker image========="
                 dir('Dockerfiles/CentOS_Ext') {
-                    sh 'docker build -t centos-sp:latest . '
+                    sh 'docker build . '
                 }
             }
         }
