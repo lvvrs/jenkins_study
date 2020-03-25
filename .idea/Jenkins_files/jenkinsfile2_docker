@@ -1,0 +1,23 @@
+#!groovy
+//Run docker build centos and some packages
+properties([disableConcurrentBuild])
+
+pipeline {
+    agent {
+        label 'node_slave_2'
+    }
+    options {
+        buildDiscarder(logRotator(numToKeepStr: '30', artifactNumToKeepStr: '30'))
+        timestamps()
+    }
+    stages {
+        stage("create docker image") {
+            steps {
+                echo "=========start building docker image========="
+                dir('Dockerfiles/CentOS-and-some-packages') {
+                    sh 'docker build -t centos-sp:latest . '
+                }
+            }
+        }
+    }
+}
