@@ -14,8 +14,8 @@ pipeline {
         stage("create docker image") {
             steps {
                 echo "=========start building docker image========="
-                dir('.idea/Dockerfiles/CentOS_Ext') {
-                    sh 'docker build -t centos-sm:latest . '
+                dir('Dockerfiles/Fedora_with_tools') {
+                    sh 'docker build -t fedora-tools:latest . '
                 }
             }
         }
